@@ -24,5 +24,4 @@ EMAIL_PORT = os.environ['MAILGUN_SMTP_PORT']
 STATIC_ROOT = BASE_DIR / "staticfiles"
 STATIC_URL = "static/"
 
-# Enable WhiteNoise's GZip compression of static assets.
-STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
+ 
