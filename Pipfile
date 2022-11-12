@@ -9,9 +9,9 @@ django-crispy-forms = "*"
 django-tailwind = "*"
 pillow = "*"
 whitenoise = "*"
-gunicorn = "*"
 dj-database-url = "*"
 mysqlclient = "*"
+gunicorn = "*"
 
 [dev-packages]
 
