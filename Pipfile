@@ -11,6 +11,7 @@ pillow = "*"
 whitenoise = "*"
 gunicorn = "*"
 dj-database-url = "*"
+mysqlclient = "*"
 
 [dev-packages]
 
