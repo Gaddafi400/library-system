@@ -1,0 +1,19 @@
+{% extends "base.html" %} {% load tailwind_filters %} {% block content %}
+<div class="max-w-lg mx-auto" style="margin-bottom: 20rem">
+  <h4
+    class="text-3xl text-gray-800"
+    style="margin-top: 2rem; margin-bottom: 2rem; font-size: 1rem"
+  >
+    Are you sure you want to return the book?
+  </h4>
+  <form method="post" class="mt-5">
+    {% csrf_token %} {{ form|crispy }}
+    <button
+      type="submit"
+      class="btn w-full text-white bg-blue-500 hover:bg-blue-600 px-3 py-2 rounded-md"
+    >
+      Submit
+    </button>
+  </form>
+</div>
+{% endblock content %}
