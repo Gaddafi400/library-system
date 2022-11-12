@@ -15,6 +15,4 @@ DATABASES = {
  
 ALLOWED_HOSTS = ['*']
 
-
-# pipenv install mysqlclient
-
+ 

@@ -73,7 +73,6 @@ class LoanBookListView(LoginRequiredMixin, generic.ListView):
 
 
 class LoanBookView(LoginRequiredMixin, generic.CreateView):
-    # queryset = Book.objects.all()
     form_class = LoanBookForm
     template_name = "library/loan_create.html"
 
