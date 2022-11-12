@@ -1,0 +1,586 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  background: #f1f5f8;
+  color: #222;
+}
+
+.booklist {
+  width: 90vw;
+  max-width: 1170px;
+  margin: 5rem auto;
+  display: grid;
+  gap: 2rem;
+}
+
+@media screen and (min-width: 768px) {
+  .booklist {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.book {
+  width: 100%;
+  background: #fff;
+  border-radius: 1rem;
+  padding: 1rem 2rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.book img {
+  align-self: center;
+}
+
+.book h1 {
+  font-size: 1rem;
+  margin-top: 1rem;
+}
+.book h4 {
+  letter-spacing: 4px;
+  font-size: 0.75rem;
+  color: #617d98;
+  margin-top: 0.25rem;
+}
+.book p {
+  margin-top: 1rem;
+}
+.book a {
+  text-align: center;
+}
+
+/* Book Detail Page */
+.book-detail {
+  border: 2px solid #c3c3c3;
+  display: flex;
+  justify-content: space-between;
+  overflow: hidden;
+}
+
+.first-section {
+  background: red;
+  width: 30vw;
+}
+.second-section {
+  margin-top: 10rem;
+  width: 60vh;
+  padding: 1rem;
+}
+
+.first-section img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+@media screen and (max-width: 500px) {
+  .book-detail {
+    flex-direction: column;
+  }
+  .first-section {
+    margin-top: 0;
+    align-self: center;
+    background: red;
+    width: 50vw;
+  }
+  .second-section {
+    margin-top: 1rem;
+    width: 60vh;
+    word-wrap: break-word;
+  }
+  .second-section p {
+    max-width: 18rem;
+  }
+  .second-section a {
+    text-align: center;
+    width: 76%;
+  }
+}
+
+/* BookLoan Checkout */
+#div_id_check_out_book {
+  display: flex !important;
+  justify-content: space-around !important;
+}
+#div_id_check_out_book .block {
+  font-size: 1.7rem !important;
+}
+
+#div_id_check_out_book input[type="checkbox"] {
+  position: relative;
+  width: 1.5em;
+  height: 1.5em;
+  color: black;
+  border: 1px solid grey;
+  border-radius: 4px;
+  appearance: none;
+  outline: 0;
+  cursor: pointer;
+  transition: background 175ms cubic-bezier(0.1, 0.1, 0.25, 1);
+}
+#div_id_check_out_book input[type="checkbox"]::before {
+  position: absolute;
+  content: "";
+  display: block;
+  top: 2px;
+  left: 7px;
+  width: 8px;
+  height: 14px;
+  border-style: solid;
+  border-color: #fff;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+  opacity: 0;
+}
+#div_id_check_out_book input[type="checkbox"]:checked {
+  color: #fff;
+  border-color: var(--primary-500);
+  background: var(--primary-500);
+}
+#div_id_check_out_book input[type="checkbox"]::before {
+  opacity: 1;
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+}
+
+/* End BookLoan Checkout */
+
+/* UserProfile */
+
+.user-profile {
+  border: 2px solid #c3c3c3;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.profile-picture img {
+  object-fit: cover;
+  border-radius: 50%;
+  height: 350px;
+  width: 350px;
+}
+.user-profile h1 {
+  margin: 0.8rem 0;
+}
+
+/* End Userprofile */
+
+/*
+=============== 
+Fonts
+===============
+*/
+@import url("https://fonts.googleapis.com/css?family=Catamaran:400,700|Grand+Hotel");
+
+/*
+=============== 
+Global Variables and settings
+===============
+*/
+:root {
+  --primary-500: #645cff;
+  --clr-primary: #678e3e;
+  --clr-primary-light: #beed8c;
+  --clr-grey-1: #102a42;
+  --clr-grey-5: #617d98;
+  --clr-grey-10: #f1f5f8;
+  --clr-white: #fff;
+  --ff-primary: "Catamaran", sans-serif;
+  --ff-secondary: "Grand Hotel", cursive;
+  --transition: all 0.3s linear;
+  --spacing: 0.25rem;
+  --radius: 0.5rem;
+}
+
+a {
+  text-decoration: none;
+}
+img {
+  width: 100%;
+  display: block;
+}
+h1,
+h2,
+h3,
+h4 {
+  letter-spacing: var(--spacing);
+  text-transform: capitalize;
+  line-height: 1.25;
+  margin-bottom: 0.75rem;
+}
+h1 {
+  font-size: 3rem;
+}
+h2 {
+  font-size: 2rem;
+}
+h3 {
+  font-size: 1.5rem;
+}
+h4 {
+  font-size: 0.875rem;
+}
+p {
+  margin-bottom: 1.25rem;
+}
+
+/* Change style on a larger screen with a width of  800px */
+@media screen and (min-width: 800px) {
+  body {
+    font-size: 1rem;
+  }
+  h1,
+  h2,
+  h3,
+  h4 {
+    line-height: 1;
+  }
+
+  h1 {
+    font-size: 4rem;
+  }
+  h2 {
+    font-size: 2.5rem;
+  }
+  h3 {
+    font-size: 2rem;
+  }
+  h4 {
+    font-size: 1rem;
+  }
+}
+
+/* More global styles */
+
+/* ======= section global ======= */
+.section-title {
+  margin-top: 4rem;
+  margin-bottom: 2rem;
+}
+.section-title h3 {
+  font-family: var(--ff-secondary);
+  color: var(--primary-500);
+}
+.section-center {
+  padding: 4rem 0;
+  width: 85vw;
+  max-width: 1170px; /* Do whatever you want but don't get bigger than 1170px */
+  margin: 0 auto;
+}
+
+@media screen and (min-width: 992px) {
+  .section-center {
+    width: 95vw;
+    padding: 4rem 1rem;
+  }
+}
+/* ======= end section global ======= */
+
+.clearfix::after,
+.clearfix::before {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+/* End more global styles */
+
+/*
+=============== 
+Animation
+===============
+*/
+@keyframes bounce {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+@keyframes slideFromRight {
+  0% {
+    transform: translateX(1000px);
+    opacity: 0;
+  }
+  50% {
+    transform: translateX(-200px);
+    opacity: 0.5;
+  }
+  75% {
+    transform: translateX(50px);
+    opacity: 0.75;
+  }
+  100% {
+    transform: translateX(0px);
+    opacity: 1;
+  }
+}
+@keyframes slideFromLeft {
+  0% {
+    transform: translateX(-1000px);
+    opacity: 0;
+  }
+  50% {
+    transform: translateX(200px);
+    opacity: 0.5;
+  }
+  75% {
+    transform: translateX(-50px);
+    opacity: 0.75;
+  }
+  100% {
+    transform: translateX(0px);
+    opacity: 1;
+  }
+}
+
+@keyframes show {
+  0% {
+    transform: scale(1.5);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(2);
+    opacity: 0.5;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/*
+=============== 
+Header
+===============
+*/
+.header {
+  color: #fff;
+  min-height: 100vh;
+  background: linear-gradient(rgb(0, 0, 0, 0.6), rgb(0, 0, 0, 0.6)),
+    url(https://images.pexels.com/photos/4861363/pexels-photo-4861363.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2)
+      center/cover no-repeat fixed;
+  position: relative;
+  /* Animation */
+  overflow-x: hidden;
+}
+
+.banner {
+  color: var(--primary-500);
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.banner h2 {
+  font-family: var(--ff-secondary);
+  color: var(--primary-500);
+  /* Animation */
+  animation: slideFromRight 5s ease-in-out 1;
+}
+.banner h1 {
+  text-transform: capitalize;
+  color: var(--clr-white);
+  margin-top: 1.25rem;
+  margin-bottom: 2rem;
+  /* Animation */
+  animation: slideFromLeft 5s ease-in-out 1;
+}
+
+.banner-btn {
+  outline: 0.125rem solid var(--primary-500);
+  outline-offset: 0.25rem;
+  font-size: 1.2rem;
+  padding: 1rem 1.7rem;
+  /* Animation */
+  animation: show 5s linear 0.5s;
+}
+
+/*  Content divider */
+.content-divider {
+  height: 0.5rem;
+  background: linear-gradient(
+    to left,
+    var(--primary-500),
+    #e9b949,
+    var(--primary-500)
+  );
+}
+
+/* 
+=============== 
+Skills
+=============== 
+*/
+
+.skills {
+  background: var(--clr-grey-10);
+}
+.skill {
+  padding: 2rem 0;
+  text-align: center;
+  transition: var(--transition);
+}
+.skill-icon {
+  color: var(--primary-500);
+  font-size: 2.5rem;
+  margin-bottom: 1.25rem;
+  display: inline-block;
+  transition: var(--transition);
+}
+
+.skill-text {
+  text-align: center;
+  color: var(--clr-grey-5);
+  max-width: 20rem;
+  margin: 0 auto;
+}
+
+.skill:hover {
+  background: var(--clr-white);
+  box-shadow: 0 2px var(--primary-500);
+}
+
+.skill-icon:hover {
+  transform: translateY(-50px);
+}
+
+@media screen and (min-width: 570px) {
+  .skill {
+    float: left;
+    width: 50%;
+  }
+}
+@media screen and (min-width: 750px) {
+  .skill {
+    width: 25%;
+  }
+}
+
+/* 
+=============== 
+About
+=============== 
+*/
+
+.about-img,
+.about-info {
+  padding: 2rem 0;
+}
+.about-picture-container {
+  background: var(--primary-500);
+  border: 0.5rem solid var(--primary-500);
+  max-width: 30rem;
+  /* extra stuff */
+  overflow: hidden;
+}
+.about-picture {
+  transition: var(--transition);
+}
+.about-picture-container:hover .about-picture {
+  opacity: 0.5;
+  transform: scale(1.2);
+}
+.about-text {
+  max-width: 26rem;
+  color: var(--clr-grey-5);
+}
+@media screen and (min-width: 992px) {
+  .about-img,
+  .about-info {
+    float: left;
+    width: 50%;
+  }
+  .about-info {
+    padding-left: 2rem;
+  }
+}
+
+/* 
+=============== 
+Contact
+=============== 
+*/
+
+.contact {
+  background: var(--clr-grey-10);
+}
+.contact i {
+  color: var(--primary-500);
+}
+.contact-info,
+.contact-form {
+  margin: 1rem 0;
+}
+.contact-item {
+  margin-bottom: 1.75rem;
+}
+.contact-title {
+  color: var(--clr-light);
+  font-weight: 400;
+}
+
+.contact-text {
+  text-transform: uppercase;
+}
+
+.contact-form {
+  background: var(--clr-white);
+  border-radius: var(--radius);
+  text-align: center;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+  transition: var(--transition);
+  max-width: 35rem;
+}
+.contact-form:hover {
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+.contact-form > h3 {
+  padding-top: 1.25rem;
+  color: var(--clr-grey-5);
+}
+.form-group {
+  padding: 1rem 1.5rem;
+}
+.form-control {
+  display: block;
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: none;
+  margin-bottom: 1.25rem;
+  background: var(--clr-grey-10);
+  border-radius: var(--radius);
+  /* text-transform: uppercase; */
+  letter-spacing: var(--spacing);
+}
+.form-control::placeholder {
+  font-family: var(--ff-primary);
+  color: var(--clr-grey-1);
+  text-transform: uppercase;
+  letter-spacing: var(--spacing);
+}
+.submit-btn {
+  display: block;
+  width: 100%;
+  padding: 1rem;
+  border-bottom-left-radius: var(--radius);
+  border-bottom-right-radius: var(--radius);
+}
+
+@media screen and (min-width: 768px) {
+  .contact-info,
+  .contact-form {
+    float: left;
+    width: 50%;
+  }
+}
