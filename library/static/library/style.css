@@ -327,6 +327,9 @@ body {
   display: grid;
   gap: 2rem;
 }
+.booklist:hover {
+  cursor: pointer;
+}
 
 @media screen and (min-width: 768px) {
   .booklist {
@@ -372,6 +375,11 @@ body {
   justify-content: space-between;
   overflow: hidden;
 }
+
+.book-detail:hover {
+  cursor: pointer;
+}
+
 
 .first-section {
   background: var(--grey-500);
@@ -492,6 +500,11 @@ body {
   align-items: center;
   border-radius: 8px;
 }
+
+.user-profile:hover {
+  cursor: pointer;
+}
+
 .profile-picture img {
   object-fit: cover;
   border-radius: 50%;
