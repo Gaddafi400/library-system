@@ -17,3 +17,5 @@ urlpatterns = [
     path("userprofile/", views.UserProfileListView.as_view(), name="userprofile"),
     path("userprofile/<int:pk>", views.UserProfileUpdateView.as_view(), name="userprofile-update"),
 ]
+
+# git commit -m "setting email config"

@@ -10,7 +10,7 @@
     <h4 class="author">By :{% for author in book.author.all %} <span>{{ author }}</span>, {% endfor %}</h4>
     <h4 class="author">Publisher : {{ book.publisher }}</h4>
     <h4 class="author">Genre : {{ book.genre }}</h4>
-    <h4 class="author">Published Date : {{ book.publisher_date }}</h4>
+    <h4 class="author">Published : {{ book.publisher_date }}</h4>
 
     <p>{{ book.description }}</p>
     <a href="{% url 'loan-book' book.id %}" class="btn" style="margin:1rem">Borrow me</a>
