@@ -51,7 +51,7 @@ class Book(models.Model):
     cover_page = CloudinaryField('image')
     # # cover_page = models.ImageField(upload_to="library/images/coverpage")
     # file = models.FileField(null=True, blank=True, upload_to="library/files")
-    file = CloudinaryField('image')
+    file = CloudinaryField('file')
     author = models.ManyToManyField(Author)
     genre = models.ForeignKey(Genre, on_delete=models.CASCADE)
     publisher = models.ForeignKey(Publisher, on_delete=models.CASCADE)
