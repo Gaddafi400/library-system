@@ -1,4 +1,3 @@
- 
 // clearInput
 const getElement = (selector) => {
   const el = document.querySelector(selector);
@@ -13,6 +12,11 @@ navToggle.addEventListener("click", function () {
   links.classList.toggle("show-links");
 });
 
-
 const date = (document.getElementById("date").innerHTML =
-   new Date().getFullYear());
+  new Date().getFullYear());
+
+const form = document.getElementById("form");
+
+form.addEventListener("onSubmit", (e) => {
+  e.preventDefault();
+});

@@ -87,6 +87,13 @@ class LoanBookView(LoginRequiredMixin, generic.CreateView):
         book_borrow.book = book
         book_borrow.user = self.request.user.userprofile
         book_borrow.date_due_for_return = current_date + timedelta(days=10)
+        
+        # checking if book has being borrowed already
+        loanBook = BookOutLoan.objects.filter(user=self.request.user.userprofile, book=book).count()
+        if loanBook >= 1:
+            messages.error(self.request, f"You cannot borrow {book.book_title} twice 🛑")
+            return redirect('book-list')
+        # else save the new borrow book to database
         book_borrow.save()
 
         # Send Email

@@ -8,7 +8,9 @@
 
     <!-- custom css -->
     <link rel="stylesheet" href='{% static "library/style.css" %}' />
-    {% comment %} <script defer src="{% static 'library/index.js' %}"></script> {% endcomment %}
+    {% comment %}
+    <script defer src="{% static 'library/index.js' %}"></script>
+    {% endcomment %}
   </head>
   <body>
     <!-- header -->
@@ -71,7 +73,7 @@
         <p class="skill-text">
           Books must be returned by the due date or earlier if recalled by the
           Librarian. Failure to return a book by the date specified will be
-          treated as a serious offence.  
+          treated as a serious offence.
         </p>
       </article>
       <!-- end skill -->
@@ -164,7 +166,8 @@
         <!-- contact form  -->
         <article class="contact-form">
           <h3>contact us</h3>
-          <form action="#" method="POST" id="form">
+          <form action="{% url 'home' %}" method="POST" id="form">
+            {% csrf_token %}
             <div class="form-group">
               <!-- inputs -->
               <input
