@@ -83,12 +83,10 @@ class LoanBookView(LoginRequiredMixin, generic.CreateView):
     def form_valid(self, form):
         current_date = date.today()
         book_borrow = form.save(commit=False)
-
         book = Book.objects.get(id=self.kwargs["pk"])
         book_borrow.book = book
         book_borrow.user = self.request.user.userprofile
         book_borrow.date_due_for_return = current_date + timedelta(days=10)
-        # book_borrow.date_returned = datetime.date.today()
         book_borrow.save()
 
         send_mail(

@@ -112,7 +112,6 @@ AUTH_USER_MODEL = 'library.User'
 CRISPY_ALLOWED_TEMPLATE_PACKS = "tailwind"
 CRISPY_TEMPLATE_PACK = 'tailwind'
 
-# EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
 
 
 
