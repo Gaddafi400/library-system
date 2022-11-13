@@ -943,11 +943,13 @@ Contact
     width: 50%;
   }
   .second-section .author {
-    font-size: 0.8rem;
+    font-size: 0.9rem;
+    font-weight: 500;
+    max-width: 20rem;
   }
   .booktitle {
     font-size: 1rem;
     font-weight: bold;
-    max-width: 18rem;
+    max-width: 20rem;
   }
 }
