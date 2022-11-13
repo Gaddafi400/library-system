@@ -380,7 +380,6 @@ body {
   cursor: pointer;
 }
 
-
 .first-section {
   background: var(--grey-500);
   width: 30vw;
@@ -440,8 +439,11 @@ body {
     width: 50%;
   }
   .second-section .author {
-  font-size: 1rem;
-}
+    font-size: 1rem;
+  }
+  .booktitle {
+    font-size: 1.4rem;
+  }
 }
 
 /* BookLoan Checkout */

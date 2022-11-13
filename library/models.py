@@ -8,19 +8,17 @@ class User(AbstractUser):
     first_name = models.CharField(max_length=255)
     last_name = models.CharField(max_length=255)
     email = models.EmailField(unique=True)
-
+    
 
 class UserProfile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE, related_name="userprofile")
     phone_number = models.CharField(max_length=50, null=True, blank=True)
     date_of_birth = models.DateField(null=True, blank=True)
     profile_photo = CloudinaryField('image')
-    # profile_photo = models.ImageField(upload_to="library/images/profile")
 
     def __str__(self):
-        return self.user.username
-
-
+        return str(self.user.username).capitalize() or ''
+    
 class Author(models.Model):
     first_name = models.CharField(max_length=255)
     last_name = models.CharField(max_length=255)
