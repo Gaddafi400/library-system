@@ -1,6 +1,6 @@
 {% extends "base.html" %} {% load tailwind_filters %} {% block content %}
 
-<div class="max-w-lg mx-auto">
+<div class="max-w-lg mx-auto" style="padding: 1rem;">
   <div class="py-5 border-t border-gray-200">
     <h1 class="text-4xl text-gray-800">Update your profile</h1>
   </div>
@@ -9,7 +9,7 @@
     {% csrf_token %} {{ form|crispy }}
     <button
       type="submit"
-      class="btn w-full text-white bg-blue-500 hover:bg-blue-600 px-3 py-2 rounded-md"
+      class="btn w-full text-white bg-blue-500 hover:bg-blue-600 px-4 py-2 rounded-md"
       style="margin-bottom: 100px"
     >
       Update
