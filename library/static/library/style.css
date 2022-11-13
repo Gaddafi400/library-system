@@ -948,5 +948,6 @@ Contact
   .booktitle {
     font-size: 1rem;
     font-weight: bold;
+    max-width: 18rem;
   }
 }
