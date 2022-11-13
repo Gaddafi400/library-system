@@ -94,12 +94,12 @@ class LoanBookView(LoginRequiredMixin, generic.CreateView):
         send_mail(
             subject="Book Borrowed Notification",
             message=f"You have borrowed {book.book_title} on {current_date} your due to return on {current_date + timedelta(days=10)}",
-            from_email="adamu@gmail.com",
-            fail_silently=False,
+            from_email="gaddafiadamu400@gmail.com",
+            fail_silently=True,
             recipient_list=["gaddafiadamu400@gmail.com"]
         )
         messages.success(self.request, "You have successfully borrow a book")
-        return super(LoanBooklView, self).form_valid(form)
+        return super(LoanBookView, self).form_valid(form)
 
 
 class LoanBookDeleteView(LoginRequiredMixin, generic.DeleteView):
