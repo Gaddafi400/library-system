@@ -4,6 +4,7 @@ from django.shortcuts import render, redirect, reverse
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.http import HttpResponse
 from django.views import generic
+from django.contrib.auth.decorators import login_required
 from django.conf import settings
 from django.db.models import Q
 
@@ -32,11 +33,11 @@ class LandingPageView(generic.TemplateView):
             return redirect("book-list")
         return super().dispatch(request, *args, **kwargs)
 
-
+@login_required
 def index(request):
     return render(request, template_name='library/index.html')
 
-
+@login_required
 def book_list_search(request):
     if request.method == 'GET':
         queryset = Book.objects.all()
