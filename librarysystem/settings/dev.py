@@ -1,4 +1,5 @@
 from .common import *
+import cloudinary
 
 DEBUG = True
 
@@ -18,3 +19,10 @@ ALLOWED_HOSTS = ['*']
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
 STATIC_ROOT = "static_root"
+
+
+cloudinary.config( 
+  cloud_name = "hinhddrry", 
+  api_key = "185741933723892", 
+  api_secret = "Ht68BBPELYuM-pvAutcPplFB0nE" 
+)

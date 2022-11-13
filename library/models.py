@@ -1,6 +1,7 @@
 from django.db import models
 from django.db.models.signals import post_save
 from django.contrib.auth.models import AbstractUser
+from cloudinary.models import CloudinaryField
 
 
 class User(AbstractUser):
@@ -13,7 +14,8 @@ class UserProfile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE, related_name="userprofile")
     phone_number = models.CharField(max_length=50, null=True, blank=True)
     date_of_birth = models.DateField(null=True, blank=True)
-    profile_photo = models.ImageField(upload_to="library/images/profile")
+    profile_photo = CloudinaryField('image')
+    # profile_photo = models.ImageField(upload_to="library/images/profile")
 
     def __str__(self):
         return self.user.username
@@ -46,8 +48,9 @@ class Book(models.Model):
     revision_number = models.CharField(max_length=50)
     book_title = models.CharField(max_length=255)
     description = models.TextField()
-    cover_page = models.ImageField(upload_to="library/images/coverpage")
-    file = models.FileField(null=True, blank=True, upload_to="library/images/files")
+    cover_page = CloudinaryField('image')
+    # cover_page = models.ImageField(upload_to="library/images/coverpage")
+    file = models.FileField(null=True, blank=True, upload_to="library/files")
     author = models.ManyToManyField(Author)
     genre = models.ForeignKey(Genre, on_delete=models.CASCADE)
     publisher = models.ForeignKey(Publisher, on_delete=models.CASCADE)
@@ -81,13 +84,12 @@ class ContactUs(models.Model):
     name = models.CharField(max_length=255)
     email = models.EmailField()
     message = models.TextField()
-    
+
     def __str__(self):
         return self.name
-    
+
     class Meta:
         verbose_name_plural = "contact us"
-    
 
 
 def post_user_created_signal(sender, instance, created, **kwargs):

@@ -8,7 +8,7 @@ class BookAdmin(admin.ModelAdmin):
     list_display = ['book_title', 'ISBN', 'thumbnail']
     
     def thumbnail(self, instance):
-        if instance.cover_page.name != '':
+        if instance.cover_page != '':
             return format_html(f'<img src="{instance.cover_page.url}" style="width:100px; height:100px; object-fit: cover; border-radius: 5%" class="thumbnail" />') 
         return ''
 

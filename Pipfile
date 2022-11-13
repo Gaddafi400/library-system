@@ -12,6 +12,7 @@ whitenoise = "*"
 dj-database-url = "*"
 mysqlclient = "*"
 gunicorn = "*"
+cloudinary = "*"
 
 [dev-packages]
 
