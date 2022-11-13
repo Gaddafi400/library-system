@@ -89,13 +89,14 @@ class LoanBookView(LoginRequiredMixin, generic.CreateView):
         book_borrow.date_due_for_return = current_date + timedelta(days=10)
         book_borrow.save()
 
-        send_mail(
-            subject="Book Borrowed Notification",
-            message=f"You have borrowed {book.book_title} on {current_date} your due to return on {current_date + timedelta(days=10)}",
-            from_email="gaddafiadamu400@gmail.com",
-            fail_silently=True,
-            recipient_list=["gaddafiadamu400@gmail.com"]
-        )
+        # Send Email
+        subject="Book Borrowed Notification"
+        message = f"You have borrowed {book.book_title} on {current_date} your due to return on {current_date + timedelta(days=10)}"
+        recipient = "gaddafiadamu400@gmail.com"
+    
+        send_mail(subject, message, settings.EMAIL_HOST_USER, [recipient], fail_silently=False)
+            
+            
         messages.success(self.request, "You have successfully borrow a book")
         return super(LoanBookView, self).form_valid(form)
 
@@ -134,3 +135,5 @@ class UserProfileUpdateView(LoginRequiredMixin, generic.UpdateView):
         user = self.request.user
         queryset = UserProfile.objects.filter(user=user.userprofile.id)
         return queryset
+
+

@@ -1,5 +1,4 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;600&family=Montserrat&display=swap");
- 
 
 :root {
   /* colors */
@@ -59,8 +58,6 @@ body {
   color: var(--textColor);
 }
 
-
-
 p {
   margin-bottom: 1.5rem;
   max-width: 40em;
@@ -119,7 +116,6 @@ ul {
   display: block;
   object-fit: cover;
 }
-
 
 /* buttons */
 .btn {
@@ -271,28 +267,24 @@ nav {
   }
 }
 
+/* Footer */
+
 .footer {
   padding-top: 1rem;
   padding-bottom: 1rem;
   background: #222;
-  display: grid;
-  place-items: center;
-
- 
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 .footer .social-icons {
-  margin-bottom: 2rem;
+  margin-bottom: 1.5rem;
 }
 .footer .social-icon {
   color: var(--primary-500);
 }
 .footer .social-icon:hover {
   color: var(--primary-300);
-}
-.footer p {
-  color: #fff;
-  font-size: 1.25rem;
-  text-transform: capitalize;
 }
 
 .footer-text {
@@ -305,12 +297,15 @@ nav {
 .company {
   color: var(--primary-500);
 }
+@media screen and (max-width: 500px) {
+  .footer-text {
+    text-align: center;
+    font-size: 1rem;
+    padding: 1rem;
+  }
+}
 
-
-
-
-
-
+/* End foooter */
 
 /* =================================== */
 /* CROSS */
@@ -386,15 +381,15 @@ body {
   width: 60vh;
   padding: 1rem;
 }
-.second-section .booktitle{
+.second-section .booktitle {
   font-size: 2rem;
   padding: 1rem;
 }
-.second-section .author{
+.second-section .author {
   font-size: 1.2rem;
   padding: 0.8rem 1rem;
 }
-.second-section p{
+.second-section p {
   font-size: 1rem;
   line-height: 2rem;
   padding: 0.8rem 1rem;
@@ -412,7 +407,8 @@ body {
   .book-detail {
     flex-direction: column;
   }
-  .book-detail h4, p {
+  .book-detail h4,
+  p {
     padding: 0;
   }
   .first-section {
@@ -486,7 +482,7 @@ body {
 /* UserProfile */
 
 .user-profile {
-  border: 1px solid  var(--grey-700);;
+  border: 1px solid var(--grey-700);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -508,8 +504,11 @@ body {
 
 @media screen and (max-width: 400px) {
   .user-profile h1 {
-    font-size: 1.3rem;
-}
+    font-size: 1.2rem;
+  }
+  .user-profile h4 {
+    font-size: 1rem;
+  }
 }
 
 /* End Userprofile */
@@ -529,7 +528,7 @@ Global Variables and settings
 */
 :root {
   --primary-500: #645cff;
- 
+
   --clr-grey-1: #102a42;
   --clr-grey-5: #617d98;
   --clr-grey-10: #f1f5f8;
@@ -541,9 +540,6 @@ Global Variables and settings
   --radius: 0.5rem;
 }
 
-a {
-  text-decoration: none;
-}
 img {
   width: 100%;
   display: block;
@@ -825,7 +821,6 @@ About
   background: var(--primary-500);
   border: 0.5rem solid var(--primary-500);
   max-width: 30rem;
-  /* extra stuff */
   overflow: hidden;
 }
 .about-picture {
@@ -929,6 +924,4 @@ Contact
   }
 }
 
-
 /* ============================================== */
-

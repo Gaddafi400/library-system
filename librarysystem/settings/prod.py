@@ -12,7 +12,7 @@ DATABASES = {
     'default': dj_database_url.config()
 }
 
-
+EMAIL_USE_TLS = True
 EMAIL_HOST = os.environ['MAILGUN_SMTP_SERVER']
 EMAIL_HOST_USER = os.environ['MAILGUN_SMTP_LOGIN']
 EMAIL_HOST_PASSWORD = os.environ['MAILGUN_SMTP_PASSWORD']

@@ -4,6 +4,7 @@ from . import views
 # URLConf
 urlpatterns = [
     path("", views.index, name="home"),
+    
     path("books/", views.book_list_search, name="book-list"),
     path("books/<int:pk>/", views.BookDetailView.as_view(), name="book-detail"),
     
