@@ -1,10 +1,10 @@
 {% extends "base.html" %} {% load tailwind_filters %} {% block content %}
-<div class="max-w-lg mx-auto" style="margin-bottom: 20rem">
+<div class="max-w-lg mx-auto" style="margin-bottom: 20rem; padding: 1rem">
   <h4
     class="text-3xl text-gray-800"
     style="margin-top: 2rem; margin-bottom: 2rem; font-size: 1rem"
   >
-    Are you sure you want to return the book?
+    Are you sure you want to return this book?
   </h4>
   <form method="post" class="mt-5">
     {% csrf_token %} {{ form|crispy }}
