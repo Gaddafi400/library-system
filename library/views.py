@@ -94,10 +94,10 @@ class LoanBookView(LoginRequiredMixin, generic.CreateView):
         message = f"You have borrowed {book.book_title} on {current_date} your due to return on {current_date + timedelta(days=10)}"
         recipient = "gaddafiadamu400@gmail.com"
     
-        send_mail(subject, message, settings.EMAIL_HOST_USER, [recipient], fail_silently=False)
+        # send_mail(subject, message, settings.EMAIL_HOST_USER, [recipient], fail_silently=False)
             
             
-        messages.success(self.request, "You have successfully borrow a book")
+        messages.success(self.request, f"You have successfully borrow {book.book_title}")
         return super(LoanBookView, self).form_valid(form)
 
 
