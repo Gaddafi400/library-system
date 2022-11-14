@@ -30,6 +30,7 @@ from library.views import LandingPageView, SignupView
 
 admin.site.site_header = 'Library Management System Admin'
 admin.site.index_title = 'Admin'
+admin.site.site_title = "Library Management System"
 
 urlpatterns = [
     path("admin/", admin.site.urls),
