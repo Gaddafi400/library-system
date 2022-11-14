@@ -3,6 +3,7 @@
 *.pyc
 /media/
 /static/
+.env
 
 # Django stuff:
 *.log
