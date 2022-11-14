@@ -28,6 +28,8 @@ from django.contrib import admin
 from django.urls import path, include
 from library.views import LandingPageView, SignupView
 
+admin.site.site_header = 'Library Management System Admin'
+admin.site.index_title = 'Admin'
 
 urlpatterns = [
     path("admin/", admin.site.urls),
