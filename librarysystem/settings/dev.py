@@ -28,19 +28,10 @@ cloudinary.config(
 )
 
 
-# EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
-# EMAIL_HOST = "smtp.mailgun.org"
-# EMAIL_HOST_USER = "postmaster@sandbox1cdb6f25f3404768898598de45897291.mailgun.org"
-# EMAIL_HOST_PASSWORD = "24bf552a9b2d0f1d043143d60d8b4cdc-48c092ba-750df0f9"
-# EMAIL_PORT = 587
-# EMAIL_USE_TLS = True
-
-EMAIL_HOST = "smtp.gmail.com"
-EMAIL_HOST_USER = "adamugaddafi99@gmail.com"
-EMAIL_HOST_PASSWORD = "rkrtbxsuunhgzdlx"
-EMAIL_PORT = 587
-EMAIL_USE_TLS = True
+ 
+ 
 
 # rkrtbxsuunhgzdlx
 
